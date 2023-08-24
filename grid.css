@@ -1,0 +1,90 @@
+/* FOR MORE INFORMATION ON GRIDS
+CHECK OUT https://css-tricks.com/snippets/css/complete-guide-grid/
+*/
+
+/* FIRST GRID */
+
+.repeat_grid {
+  margin: 50px auto 50px auto;
+  display: grid;
+  max-width: 80%;
+  grid-template-columns: repeat(3, calc(30% - 2rem));
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container_grid_bloc {
+  background-color: green;
+  height: 200px;
+  width: 100%;
+}
+
+/* SECOND GRID */
+
+.container_grid_bloc_a {
+  grid-area: header;
+  width: 100%;
+  height: 100px;
+  background-color: black;
+}
+.container_grid_bloc_b {
+  grid-area: main;
+  place-self: center;
+  width: 50%;
+  height: 100px;
+  background-color: blue;
+}
+.container_grid_bloc_c {
+  grid-area: sidebar;
+  height: 100px;
+  width: 100%;
+  background-color: green;
+}
+.container_grid_bloc_d {
+  grid-area: footer;
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}
+
+.area_grid {
+  display: grid;
+  margin: 50px auto 50px auto;
+  border: 5px solid red;
+  max-width: 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header header header'
+    'main main . sidebar'
+    'footer footer footer footer';
+}
+
+/* THIRD GRID */
+
+.fractional_grid {
+  display: grid;
+  margin: 50px auto 50px auto;
+  border: 5px solid red;
+  max-width: 80%;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.fractional_block {
+  width: auto;
+  height: 200px;
+  background-color: blue;
+}
+
+@media (width <= 768px) {
+  .container_grid {
+    grid-template-columns: 100%;
+  }
+}
+
+h1 {
+    text-align: center;
+}
